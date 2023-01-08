@@ -3,8 +3,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 
 export const Header = () => {
   return(
-    <Box>
-      <Container maxWidth='xl'>
+    <Box >
+      <Container maxWidth='xl' >
         <Toolbar>
           <AdbIcon sx={{mr: 1}} 
             // sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
@@ -22,7 +22,6 @@ export const Header = () => {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
-
             }}
           >
             LOGO

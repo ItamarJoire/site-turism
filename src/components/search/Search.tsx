@@ -1,5 +1,7 @@
-import {Box, Grid, Toolbar, AppBar, useTheme, Icon, TextField, Button, MenuItem } from '@mui/material';
-import Place from '@mui/icons-material/Place'
+import {Box, Grid, Toolbar, AppBar, useTheme, Icon, TextField, MenuItem } from '@mui/material';
+
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import { ButtonGradientColor } from '../../global-style';
 
 const locations = [
   {
@@ -17,24 +19,25 @@ export const Search = () => {
   const theme = useTheme()
 
   return(
-    <Box sx={{ py: theme.spacing(2)}}>
+    <Box sx={{ py: theme.spacing(4), pb: theme.spacing(6)}}>
       <AppBar 
         position="static"
         color="default"
         elevation={0}
         sx={{ 
-          borderRadius: 1,
+          padding: theme.spacing(1),
+          borderRadius: 2,
           background: 'white', 
-          borderBottom: '1px solid rgba(0, 0, 0, 0.12)' }}
-          // marginX:'auto', 
-          // width: { xs: '90%', sm: '50%'},
+          borderBottom: '1px solid rgba(0, 0, 0, 0.12)', 
+          maxWidth: '800px'
+        }}
           // display: { xs: 'none', md: 'flex' },
       >
         
         <Toolbar>
           <Grid container spacing={2} alignItems="center">
             <Grid item>
-              <Place color="inherit" sx={{ display: 'block' }} />
+              <LocationOnOutlinedIcon color="inherit" sx={{ display: 'block' }} />
             </Grid>
             <Grid item xs>
               <TextField
@@ -56,14 +59,14 @@ export const Search = () => {
               </TextField>
             </Grid>
             <Grid item>
-              <Button 
+              <ButtonGradientColor 
                 size='large'
-                variant="outlined" 
+                variant="contained" 
                 sx={{ mr: 1, borderRadius: 36 }}
                 startIcon={<Icon>search</Icon>}
               >
                 Buscar
-              </Button>
+              </ButtonGradientColor>
             </Grid>
           </Grid>
         </Toolbar>

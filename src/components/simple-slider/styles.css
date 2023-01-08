@@ -1,0 +1,25 @@
+
+.App {
+  font-family: sans-serif;
+  padding: 10px 30px;
+}
+
+.App div{
+  background-color: black;
+}
+
+.App > div {
+  background-color: #fff;
+  color: #fff;
+  color: #3498db;
+  text-align: center;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #881798;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #881798;
+}

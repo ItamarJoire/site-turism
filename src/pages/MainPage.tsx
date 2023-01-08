@@ -1,6 +1,6 @@
 import { Header, Cover } from "../components"
-
 import Img from '../assets/capa.jpg'
+import SimpleSlider from "../components/simple-slider/SimpleSlider"
 
 const cover = {
   title: 'Bem-vindo a Ilha de Itaparica',
@@ -16,6 +16,7 @@ export const MainPage = () => {
     <>
       <Header />
       <Cover post={cover}/>
+      <SimpleSlider />
     </>
   )
 }

@@ -1,5 +1,7 @@
 import { Paper, Box, Grid, Typography } from '@mui/material';
 
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 import { Search } from '../search/Search';
 
 interface ICoverProps{
@@ -37,20 +39,24 @@ export const Cover = (props: ICoverProps) => {
           bottom: 0,
           right: 0,
           left: 0,
-          backgroundColor: 'rgba(0,0,0,.3)',
+          backgroundColor: 'rgba(0,115,168,.2)',
         }}
       />
 
-      <Grid container>
-        <Grid item md={6}>
-          <Box
+      <Grid container >
+        <Grid 
+          item
+          md={6} 
+          >
+          <Box 
             sx={{
               position: 'relative',
-              p: { xs: 3, md: 6 },
+              p: { xs: 6, md: 8 },
               pr: { md: 0 },
             }}
           >
-            <Typography 
+            <Typography
+              fontWeight='600'
               component="h1" 
               variant="h3" 
               color="inherit" 
@@ -67,7 +73,9 @@ export const Cover = (props: ICoverProps) => {
               {post.description}
             </Typography>
             
+
             <Search />
+            <InstagramIcon />
           </Box>
         </Grid>
       </Grid>
