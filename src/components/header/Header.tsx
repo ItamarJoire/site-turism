@@ -2,15 +2,15 @@ import { Box, Container, Toolbar, Typography, useTheme } from '@mui/material'
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 
-export const Header = () => {
+export function Header() {
   const theme = useTheme()
   // const smDown = useMediaQuery('(min-width:560px)')
 
-  return(
+  return (
     <Box >
       <Container maxWidth='xl' >
         <Toolbar>
-          <BeachAccessIcon sx={{mr: 1, color: theme.palette.primary.dark}} />
+          <BeachAccessIcon sx={{ mr: 1, color: theme.palette.primary.dark }} />
           <Typography
             variant="h6"
             noWrap
@@ -22,7 +22,7 @@ export const Header = () => {
               mr: 2,
               fontFamily: 'Poppins',
               fontWeight: 700,
-              letterSpacing: '.3rem', 
+              letterSpacing: '.3rem',
               textDecoration: 'none'
             }}
           >

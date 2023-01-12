@@ -1,4 +1,4 @@
-import {Box, Grid, Toolbar, AppBar, useTheme, Icon, TextField, MenuItem, Button } from '@mui/material';
+import { Box, Grid, Toolbar, AppBar, useTheme, Icon, TextField, MenuItem, Button } from '@mui/material';
 
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
@@ -27,9 +27,9 @@ const locations = [
   },
 ];
 
-export const Search = () => {
+export function Search() {
   const theme = useTheme()
-  
+
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
@@ -38,36 +38,36 @@ export const Search = () => {
     const newArray = locations.filter((item) => {
       return item.value === result
     })
-    
+
     console.log(newArray)
   }
 
-  return(
-    <Box sx={{ py: theme.spacing(4), pb: theme.spacing(6)}} >
-      <AppBar 
+  return (
+    <Box sx={{ py: theme.spacing(4), pb: theme.spacing(6) }} >
+      <AppBar
         position="static"
         elevation={0}
-        sx={{ 
+        sx={{
           padding: theme.spacing(1),
           borderRadius: 2,
-          background: 'white', 
-          borderBottom: '1px solid rgba(0, 0, 0, 0.12)', 
+          background: 'white',
+          borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
           maxWidth: '600px'
         }}
       >
-        
+
         <Toolbar >
-          <Grid 
+          <Grid
             component='form'
             onSubmit={handleSearch}
             container
-            alignItems="center" 
-            spacing={2} 
+            alignItems="center"
+            spacing={2}
           >
             <Grid item>
               <LocationOnOutlinedIcon sx={{ color: '#58585F', display: 'block' }} />
             </Grid>
-            
+
             <Grid item xs>
               <TextField
                 variant="standard"
@@ -78,7 +78,7 @@ export const Search = () => {
                 placeholder="Escolha o tipo de comércio"
                 InputProps={{
                   disableUnderline: true,
-                  sx: { fontSize: 'default', color: '#58585F'},
+                  sx: { fontSize: 'default', color: '#58585F' },
                 }}
               >
                 {locations.map((place) => (
@@ -91,13 +91,13 @@ export const Search = () => {
             </Grid>
 
             <Grid item>
-              <Button 
-                variant="contained" 
+              <Button
+                variant="contained"
                 type='submit'
-                size='large'
+                size='medium'
                 disableElevation
                 startIcon={<Icon>search</Icon>}
-                sx={{  mr: 1, borderRadius: 36 }}
+                sx={{ mr: 1, borderRadius: 36 }}
               >
                 Buscar
               </Button>

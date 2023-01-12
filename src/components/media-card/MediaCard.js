@@ -1,11 +1,10 @@
-import { Box, Card, CardMedia, CardContent, CardActions, Typography, Button } from '@mui/material'
-
+import {Box, Card, Button, CardActions, Typography } from '@mui/material'
 import Slider from 'react-slick'
 
 import LeftArrow from '../../assets/images/left-arrow.svg'
 import RightArrow from '../../assets/images/right-arrow.svg'
 
-export const MediaCard = ({ title, data }) => {
+export function MediaCard({ title, subtitle, data }) {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <img src={LeftArrow} alt="prevArrow" {...props} />
   )
@@ -18,81 +17,110 @@ export const MediaCard = ({ title, data }) => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
-
     responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        }
+      },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 414,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         }
       },
     ]
   }
 
   return (
-    <Card className="card-container" variant='none'>
-      <Typography
-        variant="h5"
-        component="h1"
-      >
-        {title}
-      </Typography>
-      <Slider {...settings} className="card-container--inner">
-        {data.map((item) => {
-          return (
-            <Card
-              variant='elevation'
-              sx={{ maxWidth: 345, height: 400, m: 2 }}
-            >
-              <CardMedia
-                sx={{ height: 170 }}
-                image={item.image}
-                title={item.title}
-              />
-              <Box sx={{ p: 1 }}
-              >
-                <CardContent>
-                  <Typography
-                    component="div"
-                    variant="h5"
-                    gutterBottom
+    <Box className="card-container">
+      <Box  sx={{ pb: 2, pt: 2, width: '90%' }}>
+        <Typography
+          component='h3'
+          variant='h5'
+          color='text.secondary'
+          textAlign='left'
+        >
+          {title}
+        </Typography>
+        <Typography
+          component='p'
+          variant='body2'
+          color='text.secondary'
+          textAlign='left'
+        >
+          {subtitle}
+        </Typography>
+      </Box>
 
+      <Slider {...settings} className="card-container--inner">
+        {data.map((item, index) => {
+          return (
+            <Box>
+              <Card 
+              sx={{ maxWidth: '345px' }}
+                variant='outlined'
+                className="card-container--inner--card" key={index}>
+                <img src={item.image} alt="hero_img" />
+
+                <Box sx={{ p: 1}}>
+                  <Typography sx={{ m: 1 }}
+                    component='h2'
+                    textAlign='left'
                   >
                     {item.title}
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    whiteSpace='inherit'
-                    overflow='hidden'
-                    textOverflow='ellipsis'
+                  
+                  <Typography 
+                    sx={{ m: 1 }}
+                    variant='body2'
+                    component='h2'
+                    color='text.secondary'
                   >
                     {item.description}
                   </Typography>
-                </CardContent>
-                <CardActions sx={{ display: 'flex', justifyContent: 'end' }}>
-                  <Button
-                    disableElevation
-                    variant='contained'
-                    size="small"
-                    href='https://google.com.br'
-                    target='_blank'
-                  >
-                    Mais informações
-                  </Button>
-                </CardActions>
-              </Box>
-            </Card>
 
+                  <CardActions sx={{ display: 'flex', justifyContent: 'end', mt: 1}}>
+                    <Button 
+                      sx={{ textTransform: 'capitalize' }}
+                      size='small'
+                      disableElevation
+                      variant='contained'
+                      component='a'
+                      href='https://google.com.br'
+                      target='_blank'
+                    >
+                      Mais detalhes
+                    </Button>
+                  </CardActions>
+                </Box>
+              </Card>
+            </Box>
           )
         })}
       </Slider>
-    </Card>
+    </Box>
   )
 }

@@ -5,11 +5,10 @@ import { MainPage } from './pages';
 
 
 
-export const App = () => {
+export function App() {
   return (
     <ThemeProvider theme={theme}>
       <MainPage />
-      
     </ThemeProvider>
   );
 }
