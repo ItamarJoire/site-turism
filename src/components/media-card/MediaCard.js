@@ -1,4 +1,4 @@
-import {Box, Card, Button, CardActions, Typography } from '@mui/material'
+import {Box, Card, Button, CardActions, Typography, CardMedia, CardContent } from '@mui/material'
 import Slider from 'react-slick'
 
 import LeftArrow from '../../assets/images/left-arrow.svg'
@@ -55,67 +55,59 @@ export function MediaCard({ title, subtitle, data }) {
   }
 
   return (
-    <Box className="card-container">
-      <Box  sx={{ pb: 2, pt: 2, width: '90%' }}>
+    <Box sx={{ width: '90%', mx: 'auto' }}>
+      <Box sx={{ mb: 3 }}>
         <Typography
           component='h3'
           variant='h5'
           color='text.secondary'
-          textAlign='left'
         >
-          {title}
+          {title}          
         </Typography>
         <Typography
           component='p'
           variant='body2'
           color='text.secondary'
-          textAlign='left'
+          gutterBottom
         >
           {subtitle}
         </Typography>
       </Box>
 
-      <Slider {...settings} className="card-container--inner">
+      <Slider {...settings}>
         {data.map((item, index) => {
           return (
             <Box>
-              <Card 
-              sx={{ maxWidth: '345px' }}
-                variant='outlined'
-                className="card-container--inner--card" key={index}>
-                <img src={item.image} alt="hero_img" />
+              <Card sx={{ maxWidth: 345, mx: 0.8 }} variant='outlined'>
+                <CardMedia
+                  sx={{ height: 140 }}
+                  image={item.image}
+                  key={index}
+                />
 
-                <Box sx={{ p: 1}}>
-                  <Typography sx={{ m: 1 }}
-                    component='h2'
-                    textAlign='left'
-                  >
+                <CardContent>
+                  <Typography gutterBottom variant='h6' component='h2'>
                     {item.title}
                   </Typography>
                   
-                  <Typography 
-                    sx={{ m: 1 }}
-                    variant='body2'
-                    component='h2'
-                    color='text.secondary'
-                  >
+                  <Typography variant='body2' color='text.secondary'>
                     {item.description}
                   </Typography>
-
-                  <CardActions sx={{ display: 'flex', justifyContent: 'end', mt: 1}}>
-                    <Button 
-                      sx={{ textTransform: 'capitalize' }}
-                      size='small'
-                      disableElevation
-                      variant='contained'
-                      component='a'
-                      href='https://google.com.br'
-                      target='_blank'
-                    >
-                      Mais detalhes
-                    </Button>
-                  </CardActions>
-                </Box>
+                </CardContent>
+               
+                <CardActions sx={{ p: 2}}>
+                  <Button 
+                    sx={{ textTransform: 'capitalize' }}
+                    size='small'
+                    disableElevation
+                    variant='contained'
+                    component='a'
+                    href='https://google.com.br'
+                    target='_blank'
+                  >
+                    Mais detalhes
+                  </Button>
+                </CardActions>
               </Card>
             </Box>
           )

@@ -2,7 +2,10 @@ import { Paper, Box, Grid, Typography, useMediaQuery } from '@mui/material';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 
+import Logo from '../../assets/images/logo.png'
+
 import { Search } from '../search/Search';
+import { fontSize } from '@mui/system';
 
 interface ICoverProps {
   post: {
@@ -16,13 +19,12 @@ interface ICoverProps {
 export function Cover(props: ICoverProps) {
   const { post } = props
   const smDown = useMediaQuery('(min-width:560px)')
-  const smDownText = useMediaQuery('(min-width:420px)')
+  const smDownText = useMediaQuery('(min-width:470px)')
 
   return (
     <Paper
       sx={{
         position: 'relative',
-        backgroundColor: 'grey.800',
         color: '#fff',
         mb: 4,
         backgroundSize: 'cover',
@@ -31,6 +33,26 @@ export function Cover(props: ICoverProps) {
         backgroundImage: `url(${post.image})`,
       }}
     >
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          py: 2, px: 6, mb: 6
+        }}
+      >
+        <Box sx={{
+          display: 'flex',
+          alignItems: 'center'
+        }}>
+          <img src={Logo} alt='Logotipo' style={{ width: '44px', height: '44px', marginRight: '16px' }} />
+          <Typography fontWeight={700} letterSpacing={2} variant='h6' paddingTop={1}>
+            Turism
+          </Typography>
+        </Box>
+        <InstagramIcon />
+      </Box>
+
       {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
 
       <Grid container >
@@ -39,14 +61,12 @@ export function Cover(props: ICoverProps) {
             sx={{
               position: 'relative',
               marginX: { xs: 'none', xl: 'auto' },
-              width: { xs: 'none', xl: '70%' },
+              width: { xs: 'none', xl: '90%' },
             }}
-            padding={smDown ? 8 : 4}
+            padding={smDown ? 6 : 4}
           >
             <Typography
-              sx={{ maxWidth: { xs: '600px' } }}
-              fontSize={smDownText ? '42px' : '38px'}
-              align={smDownText ? 'left' : 'center'}
+              fontSize={smDownText ? '42px' : '34px'}
               fontWeight='600'
               component="h1"
               variant="h4"
@@ -58,7 +78,6 @@ export function Cover(props: ICoverProps) {
 
             <Typography
               fontSize={smDownText ? '20px' : '18px'}
-              align={smDownText ? 'left' : 'center'}
               variant="h4"
               color="#inherit"
               paragraph
@@ -74,13 +93,13 @@ export function Cover(props: ICoverProps) {
               target='_blank'
               color='#fff'
             >
-              <InstagramIcon />
+              {/* <InstagramIcon /> */}
             </Box>
           </Box>
         </Grid>
       </Grid>
 
 
-    </Paper>
+    </Paper >
   )
 }

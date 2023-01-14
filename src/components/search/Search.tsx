@@ -4,7 +4,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 const locations = [
   {
-    value: 'Itaparica',
+    location: 'Itaparica',
     commerce: {
       name: 'Bar 1',
       local: 'Rua 1.1'
@@ -15,7 +15,7 @@ const locations = [
     }
   },
   {
-    value: 'Cidade 2',
+    location: 'Cidade 2',
     commerce: {
       name: 'Bar 2',
       local: 'Rua 2.1'
@@ -27,6 +27,28 @@ const locations = [
   },
 ];
 
+const locations2 = [
+  {
+    location: 'Itaparica',
+    restaurant: [
+      {
+        id: 1,
+        title: 'Porto Canoas nas Cataratas',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaini',
+        image: "https://source.unsplash.com/random/?restaurant/1"
+      },
+      {
+        id: 2,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaini',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+
+
+    ]
+  }
+];
+
 export function Search() {
   const theme = useTheme()
 
@@ -35,8 +57,8 @@ export function Search() {
     const data = new FormData(event.currentTarget)
     const result = data.get('option')
 
-    const newArray = locations.filter((item) => {
-      return item.value === result
+    const newArray = locations2.filter((item) => {
+      return item.location === result
     })
 
     console.log(newArray)
@@ -81,9 +103,9 @@ export function Search() {
                   sx: { fontSize: 'default', color: '#58585F' },
                 }}
               >
-                {locations.map((place) => (
-                  <MenuItem key={place.value} value={place.value}>
-                    {place.value}
+                {locations2.map((place) => (
+                  <MenuItem key={place.location} value={place.location}>
+                    {place.location}
                   </MenuItem>
                 ))}
 
@@ -92,12 +114,12 @@ export function Search() {
 
             <Grid item>
               <Button
+                sx={{ textTransform: 'capitalize', mr: 1, borderRadius: 36 }}
                 variant="contained"
                 type='submit'
                 size='medium'
                 disableElevation
                 startIcon={<Icon>search</Icon>}
-                sx={{ mr: 1, borderRadius: 36 }}
               >
                 Buscar
               </Button>

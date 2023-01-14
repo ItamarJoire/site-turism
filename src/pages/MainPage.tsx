@@ -54,7 +54,7 @@ const dataRestaurants = [
 export function MainPage() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Cover post={cover} />
       <MediaCard title='Restaurantes' subtitle='Opções deliciosas esperando por você' data={dataRestaurants} />
       <Footer />
