@@ -1,10 +1,24 @@
-import {Box, Card, Button, CardActions, Typography, CardMedia, CardContent } from '@mui/material'
-import Slider from 'react-slick'
+import {
+  Box,
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Button
+} from '@mui/material'
 
+import { useLocation } from '../../hooks/useLocation'
+
+import Slider from 'react-slick'
 import LeftArrow from '../../assets/images/left-arrow.svg'
 import RightArrow from '../../assets/images/right-arrow.svg'
 
-export function MediaCard({ title, subtitle, data }) {
+export function MediaCard({ title, subtitle, option }) {
+
+  // eslint-disable-next-line no-unused-vars
+  const { local } = useLocation()
+
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <img src={LeftArrow} alt="prevArrow" {...props} />
   )
@@ -56,13 +70,13 @@ export function MediaCard({ title, subtitle, data }) {
 
   return (
     <Box sx={{ width: '90%', mx: 'auto' }}>
-      <Box sx={{ mb: 3 }}>
+      <Box sx={{ mb: 3, mt: 4 }}>
         <Typography
           component='h3'
           variant='h5'
           color='text.secondary'
         >
-          {title}          
+          {title}
         </Typography>
         <Typography
           component='p'
@@ -75,7 +89,7 @@ export function MediaCard({ title, subtitle, data }) {
       </Box>
 
       <Slider {...settings}>
-        {data.map((item, index) => {
+        {option.map((item, index) => {
           return (
             <Box>
               <Card sx={{ maxWidth: 345, mx: 0.8 }} variant='outlined'>
@@ -89,14 +103,14 @@ export function MediaCard({ title, subtitle, data }) {
                   <Typography gutterBottom variant='h6' component='h2'>
                     {item.title}
                   </Typography>
-                  
+
                   <Typography variant='body2' color='text.secondary'>
                     {item.description}
                   </Typography>
                 </CardContent>
-               
-                <CardActions sx={{ p: 2}}>
-                  <Button 
+
+                <CardActions sx={{ p: 2 }}>
+                  <Button
                     sx={{ textTransform: 'capitalize' }}
                     size='small'
                     disableElevation

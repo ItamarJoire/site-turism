@@ -1,11 +1,16 @@
-import { Paper, Box, Grid, Typography, useMediaQuery } from '@mui/material';
+import {
+  Paper,
+  Box,
+  Grid,
+  Typography,
+  useMediaQuery
+} from '@mui/material';
+
+import { Search } from '../search/Search';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 import Logo from '../../assets/images/logo.png'
-
-import { Search } from '../search/Search';
-import { fontSize } from '@mui/system';
 
 interface ICoverProps {
   post: {
@@ -93,7 +98,6 @@ export function Cover(props: ICoverProps) {
               target='_blank'
               color='#fff'
             >
-              {/* <InstagramIcon /> */}
             </Box>
           </Box>
         </Grid>

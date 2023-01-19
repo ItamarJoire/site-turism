@@ -1,67 +1,176 @@
-import { Box, Grid, Toolbar, AppBar, useTheme, Icon, TextField, MenuItem, Button } from '@mui/material';
+import {
+  useTheme,
+  Box,
+  AppBar,
+  Toolbar,
+  Grid,
+  TextField,
+  MenuItem,
+  Button,
+  Icon
+} from '@mui/material';
+
+import { useLocation } from '../../hooks/useLocation';
 
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 const locations = [
   {
     location: 'Itaparica',
-    commerce: {
-      name: 'Bar 1',
-      local: 'Rua 1.1'
-    },
-    roost: {
-      name: 'Pousada 1',
-      local: 'Rua 1.2'
-    }
-  },
-  {
-    location: 'Cidade 2',
-    commerce: {
-      name: 'Bar 2',
-      local: 'Rua 2.1'
-    },
-    roost: {
-      name: 'Pousada 2',
-      local: 'Rua 2.2'
-    }
-  },
-];
-
-const locations2 = [
-  {
-    location: 'Itaparica',
     restaurant: [
       {
         id: 1,
         title: 'Porto Canoas nas Cataratas',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaini',
+        description: 'Lorem Ipsum ',
         image: "https://source.unsplash.com/random/?restaurant/1"
       },
       {
         id: 2,
         title: 'Porto Canoas',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaini',
+        description: 'Lorem Ipsum ',
         image: "https://source.unsplash.com/random/?restaurant/2"
       },
-
-
-    ]
+      {
+        id: 3,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 4,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 5,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+    ],
+    commerce: [
+      {
+        id: 1,
+        title: 'Porto Canoas nas Cataratas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/1"
+      },
+      {
+        id: 2,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 3,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 4,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 5,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+    ],
+  },
+  {
+    location: 'Cidade 2',
+    restaurant: [
+      {
+        id: 1,
+        title: 'Rest da cidade 2',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/1"
+      },
+      {
+        id: 2,
+        title: 'Rest da cidade 2',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 3,
+        title: 'Rest da cidade 2',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 4,
+        title: 'Rest da cidade 2',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 5,
+        title: 'Rest da cidade 2',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 6,
+        title: 'Rest da cidade 2',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+    ],
+    commerce: [
+      {
+        id: 1,
+        title: 'Porto Canoas nas Cataratas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/1"
+      },
+      {
+        id: 2,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 3,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 4,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+      {
+        id: 5,
+        title: 'Porto Canoas',
+        description: 'Lorem Ipsum ',
+        image: "https://source.unsplash.com/random/?restaurant/2"
+      },
+    ],
   }
-];
+]
 
 export function Search() {
   const theme = useTheme()
+  const { setLocal } = useLocation()
 
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
     const result = data.get('option')
 
-    const newArray = locations2.filter((item) => {
+    const newArray = locations.filter((item) => {
       return item.location === result
     })
 
-    console.log(newArray)
+    setLocal(newArray)
   }
 
   return (
@@ -103,12 +212,11 @@ export function Search() {
                   sx: { fontSize: 'default', color: '#58585F' },
                 }}
               >
-                {locations2.map((place) => (
+                {locations.map((place) => (
                   <MenuItem key={place.location} value={place.location}>
                     {place.location}
                   </MenuItem>
                 ))}
-
               </TextField>
             </Grid>
 
