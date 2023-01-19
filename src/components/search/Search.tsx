@@ -160,6 +160,7 @@ const locations = [
 export function Search() {
   const theme = useTheme()
   const { setLocal } = useLocation()
+  console.log('LOCATIONS: ', locations)
 
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -171,6 +172,7 @@ export function Search() {
     })
 
     setLocal(newArray)
+
   }
 
   return (
