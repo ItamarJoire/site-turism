@@ -13,9 +13,9 @@ import {
 
 import { useLocation } from '../../hooks/useLocation';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 
-import axios from 'axios'
+// import axios from 'axios'
 
 const locations = [
   {
@@ -130,19 +130,20 @@ const locations = [
   }
 ]
 
-interface IProps {
-  id: number
-  title: string
-  author: string
-}
+// interface IProps {
+//   id: number
+//   title: string
+//   author: string
+// }
 
-interface IPropsArray {
-  location: string
-  restaurants: IProps[]
-  commerces: IProps[]
-}
+// interface IPropsArray {
+//   location: string
+//   restaurants: IProps[]
+//   commerces: IProps[]
+// }
 
 export function Search() {
+  const theme = useTheme()
   const { setLocal } = useLocation()
 
   function handleSearch(event: React.FormEvent<HTMLFormElement>) {
