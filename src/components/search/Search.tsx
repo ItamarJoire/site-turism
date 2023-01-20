@@ -10,11 +10,10 @@ import {
   Icon
 } from '@mui/material';
 
-import { useEffect, useState } from 'react'
 
 import { useLocation } from '../../hooks/useLocation';
-
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import { useState, useEffect } from 'react'
 
 import axios from 'axios'
 
@@ -144,19 +143,17 @@ interface IPropsArray {
 }
 
 export function Search() {
-  // const { local, setLocal } = useLocation()
+  const { setLocal } = useLocation()
   const theme = useTheme()
-  const [dataLocal, setDataLocal] = useState<IPropsArray>()
+  const [dataLocal, setDataLocal] = useState<IPropsArray[]>([])
   const url = 'http://localhost:3001/locations'
 
-  async function loadData() {
-    await axios.get(url)
+  useEffect(() => {
+
+    axios.get(url)
       .then(response => setDataLocal(response.data))
       .catch(error => console.log(error))
-  }
 
-  useEffect(() => {
-    loadData()
   }, [])
 
   console.log(dataLocal)
@@ -170,7 +167,7 @@ export function Search() {
       return item.location === result
     })
 
-    console.log('NewArray => ', newArray)
+    setLocal(newArray)
   }
 
   return (

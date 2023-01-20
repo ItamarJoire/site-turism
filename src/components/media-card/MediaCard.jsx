@@ -10,12 +10,14 @@ import {
 
 import { useLocation } from '../../hooks/useLocation'
 
+import { useNavigate } from 'react-router-dom'
+
 import Slider from 'react-slick'
 import LeftArrow from '../../assets/images/left-arrow.svg'
 import RightArrow from '../../assets/images/right-arrow.svg'
 
 export function MediaCard({ title, subtitle, option }) {
-
+  const navigate = useNavigate()
   // eslint-disable-next-line no-unused-vars
   const { local } = useLocation()
 
@@ -68,6 +70,9 @@ export function MediaCard({ title, subtitle, option }) {
     ]
   }
 
+  function navigateLocationDatailPage() {
+    navigate('/detalhe-do-local')
+  }
   return (
     <Box sx={{ width: '90%', mx: 'auto' }}>
       <Box sx={{ mb: 3, mt: 4 }}>
@@ -115,8 +120,8 @@ export function MediaCard({ title, subtitle, option }) {
                     size='small'
                     disableElevation
                     variant='contained'
+                    onClick={navigateLocationDatailPage}
                     component='a'
-                    href='https://google.com.br'
                     target='_blank'
                   >
                     Mais detalhes
