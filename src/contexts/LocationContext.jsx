@@ -1,17 +1,5 @@
 import { createContext, useState } from "react";
 
-// interface IProps {
-//   id: number
-//   title: string
-//   description: string
-//   image: string
-// }
-
-// interface ILocationContextArray {
-//   location: string
-//   restaurant?: IProps[]
-// }
-
 export const LocationContext = createContext()
 
 export function LocationContextProvider({ children }) {
