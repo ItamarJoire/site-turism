@@ -10,9 +10,13 @@ import {
   Icon
 } from '@mui/material';
 
+import { useEffect, useState } from 'react'
+
 import { useLocation } from '../../hooks/useLocation';
 
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+
+import axios from 'axios'
 
 const locations = [
   {
@@ -42,12 +46,6 @@ const locations = [
         description: 'Lorem Ipsum ',
         image: "https://source.unsplash.com/random/?restaurant/2"
       },
-      {
-        id: 5,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
     ],
     commerce: [
       {
@@ -70,12 +68,6 @@ const locations = [
       },
       {
         id: 4,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 5,
         title: 'Porto Canoas',
         description: 'Lorem Ipsum ',
         image: "https://source.unsplash.com/random/?restaurant/2"
@@ -109,18 +101,6 @@ const locations = [
         description: 'Lorem Ipsum ',
         image: "https://source.unsplash.com/random/?restaurant/2"
       },
-      {
-        id: 5,
-        title: 'Rest da cidade 2',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 6,
-        title: 'Rest da cidade 2',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
     ],
     commerce: [
       {
@@ -147,21 +127,41 @@ const locations = [
         description: 'Lorem Ipsum ',
         image: "https://source.unsplash.com/random/?restaurant/2"
       },
-      {
-        id: 5,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
     ],
   }
 ]
 
-export function Search() {
-  const theme = useTheme()
-  const { setLocal } = useLocation()
+interface IProps {
+  id: number
+  title: string
+  author: string
+}
 
-  const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
+interface IPropsArray {
+  location: string
+  restaurants: IProps[]
+  commerces: IProps[]
+}
+
+export function Search() {
+  // const { local, setLocal } = useLocation()
+  const theme = useTheme()
+  const [dataLocal, setDataLocal] = useState<IPropsArray>()
+  const url = 'http://localhost:3001/locations'
+
+  async function loadData() {
+    await axios.get(url)
+      .then(response => setDataLocal(response.data))
+      .catch(error => console.log(error))
+  }
+
+  useEffect(() => {
+    loadData()
+  }, [])
+
+  console.log(dataLocal)
+
+  function handleSearch(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
     const result = data.get('option')
@@ -170,7 +170,7 @@ export function Search() {
       return item.location === result
     })
 
-    setLocal(newArray)
+    console.log('NewArray => ', newArray)
   }
 
   return (
@@ -186,7 +186,6 @@ export function Search() {
           maxWidth: '600px'
         }}
       >
-
         <Toolbar >
           <Grid
             component='form'
@@ -212,10 +211,12 @@ export function Search() {
                   sx: { fontSize: 'default', color: '#58585F' },
                 }}
               >
+
                 {locations.map((place) => (
                   <MenuItem key={place.location} value={place.location}>
                     {place.location}
                   </MenuItem>
+
                 ))}
               </TextField>
             </Grid>
