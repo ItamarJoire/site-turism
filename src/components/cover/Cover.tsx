@@ -103,7 +103,6 @@ export function Cover(props: ICoverProps) {
         </Grid>
       </Grid>
 
-
     </Paper >
   )
 }

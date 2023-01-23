@@ -1,21 +1,7 @@
-import {
-  useTheme,
-  Box,
-  AppBar,
-  Toolbar,
-  Grid,
-  TextField,
-  MenuItem,
-  Button,
-  Icon
-} from '@mui/material';
-
+import { useTheme, Box, AppBar, Toolbar, Grid, TextField, MenuItem, Button, Icon } from '@mui/material';
 
 import { useLocation } from '../../hooks/useLocation';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-// import { useState, useEffect } from 'react'
-
-// import axios from 'axios'
 
 const locations = [
   {
@@ -130,33 +116,31 @@ const locations = [
   }
 ]
 
-// interface IProps {
-//   id: number
-//   title: string
-//   author: string
-// }
-
-// interface IPropsArray {
-//   location: string
-//   restaurants: IProps[]
-//   commerces: IProps[]
-// }
-
 export function Search() {
   const theme = useTheme()
   const { setLocal } = useLocation()
 
+  // const [data, isLoading] = useQuery("locations", () => {
+  //   return axios
+  //     .get('http://localhost:3001/locations')
+  //     .then(response => response.data)
+  // })
+
+  // if (isLoading) {
+  //   return console.log('Carregando...')
+  // }
+
+
   function handleSearch(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    const result = data.get('option')
+    const dataEvent = new FormData(event.currentTarget)
+    const result = dataEvent.get('option')
 
     const newArray = locations.filter((item) => {
       return item.location === result
     })
 
     setLocal(newArray)
-
   }
 
   return (

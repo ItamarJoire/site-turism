@@ -1,31 +1,25 @@
-import {
-  Box,
-  Typography,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Button
-} from '@mui/material'
-
-import { useLocation } from '../../hooks/useLocation'
+import { Box, Typography, Card, CardMedia, CardContent, CardActions, Button } from '@mui/material'
 
 import { useNavigate } from 'react-router-dom'
 
-import Slider from 'react-slick'
+import Slider, { CustomArrowProps } from 'react-slick'
 import LeftArrow from '../../assets/images/left-arrow.svg'
 import RightArrow from '../../assets/images/right-arrow.svg'
 
-export function MediaCard({ title, subtitle, option }) {
-  const navigate = useNavigate()
-  // eslint-disable-next-line no-unused-vars
-  const { local } = useLocation()
+interface IProps {
+  title: string
+  subtitle: string
+  option?: any
+}
 
-  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+export function MediaCard({ title, subtitle, option }: IProps) {
+  const navigate = useNavigate()
+
+  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }: CustomArrowProps) => (
     <img src={LeftArrow} alt="prevArrow" {...props} />
   )
 
-  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props }: CustomArrowProps) => (
     <img src={RightArrow} alt="nextArrow" {...props} />
   )
 
@@ -94,7 +88,7 @@ export function MediaCard({ title, subtitle, option }) {
       </Box>
 
       <Slider {...settings}>
-        {option.map((item, index) => {
+        {option.map((item: any, index: any) => {
           return (
             <Box>
               <Card sx={{ maxWidth: 345, mx: 0.8 }} variant='outlined'>
