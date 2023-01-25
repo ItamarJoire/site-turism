@@ -1,46 +1,48 @@
-import { useEffect, createContext, useState, ReactNode, Dispatch, SetStateAction } from 'react'
+export { }
 
-import axios from 'axios'
+// import { useEffect, createContext, useState, ReactNode, Dispatch, SetStateAction } from 'react'
 
-interface IImg {
-  image: string
-}
+// import axios from 'axios'
 
-interface IInformationLocation {
-  id: number
-  title: string
-  description: string
-  images: IImg[]
-}
+// interface IImg {
+//   image: string
+// }
 
-interface ILocationArray {
-  name?: string
-  restaurants: IInformationLocation[]
-}
+// interface IInformationLocation {
+//   id: number
+//   title: string
+//   description: string
+//   images: IImg[]
+// }
 
-interface ILocationData {
-  locations: ILocationArray[]
-}
+// interface ILocationArray {
+//   name?: string
+//   restaurants: IInformationLocation[]
+// }
 
-interface IChildren {
-  children: ReactNode
-}
+// interface ILocationData {
+//   locations: ILocationArray[]
+// }
 
-export const BaseContext = createContext({} as ILocationData)
+// interface IChildren {
+//   children: ReactNode
+// }
 
-export function BaseContextProvider({ children }: IChildren) {
-  const [list, setList] = useState<ILocationData[]>([])
+// export const BaseContext = createContext({} as ILocationData)
 
-  useEffect(() => {
-    axios
-      .get('http://localhost:3001/locations')
-      .then(response => setList(response.data))
-  }, [])
+// export function BaseContextProvider({ children }: IChildren) {
+//   const [list, setList] = useState<ILocationData[]>([])
 
-  return (
-    <BaseContext.Provider value={{ list, setList }}>
+//   useEffect(() => {
+//     axios
+//       .get('http://localhost:3001/locations')
+//       .then(response => setList(response.data))
+//   }, [])
 
-      {children}
-    </BaseContext.Provider>
-  )
-}
+//   return (
+//     <BaseContext.Provider value={{ list, setList }}>
+
+//       {children}
+//     </BaseContext.Provider>
+//   )
+// }

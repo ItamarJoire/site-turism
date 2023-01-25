@@ -21,15 +21,19 @@ export function TableDays() {
       sx={{
         display: 'flex',
         justifyContent: 'center',
-        my: 4,
+        mt: 6,
+        mb: 4,
+        border: 1,
+        borderColor: '#E0E0E0',
+        borderRadius: 1,
       }}
     >
       <Table sx={{ minWidth: 320, maxWidth: 700 }} aria-label="simple table" >
         <TableBody >
           {rows.map((row) => (
             <TableRow key={row.day}>
-              <TableCell align="left">{row.day}</TableCell>
-              <TableCell align="right">{row.hour}</TableCell>
+              <TableCell align="left" sx={{ fontWeight: 600 }}>{row.day}</TableCell>
+              <TableCell align="right" sx={{ fontWeight: 500 }}>{row.hour}</TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -21,7 +21,7 @@ export function Cover(props: ICoverProps) {
   const smDownText = useMediaQuery('(min-width:470px)')
 
   return (
-    <Paper
+    <Paper component={Box}
       sx={{
         position: 'relative',
         color: '#fff',
@@ -38,7 +38,7 @@ export function Cover(props: ICoverProps) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          py: 2, px: 6, mb: 6,
+          py: 2, px: 2, mb: 6,
         }}
       >
         <Box sx={{
@@ -63,7 +63,7 @@ export function Cover(props: ICoverProps) {
               marginX: { xs: 'none', xl: 'auto' },
               width: { xs: 'none', xl: '90%' },
             }}
-            padding={smDown ? 6 : 4}
+            padding={smDown ? 6 : 2}
           >
             <Typography
               fontSize={smDownText ? '42px' : '34px'}
@@ -78,9 +78,11 @@ export function Cover(props: ICoverProps) {
 
             <Typography
               fontSize={smDownText ? '20px' : '18px'}
+              maxWidth='700px'
               variant="h4"
               color="#inherit"
               paragraph
+              lineHeight='30px'
             >
               {post.description}
             </Typography>

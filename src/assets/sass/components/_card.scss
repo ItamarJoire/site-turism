@@ -5,13 +5,13 @@ h2, p{
   -webkit-box-orient: vertical;
 }
 
-h2{
-  // -webkit-line-clamp: 1;
-}
+// h2{
+//   // -webkit-line-clamp: 1;
+// }
 
-p{
-  -webkit-line-clamp: 3;
-}
+// p{
+//   -webkit-line-clamp: 3;
+// }
 
 // React-Slick
 .slick-next,
@@ -32,11 +32,16 @@ p{
   }
 }
 
+.slick-dots{
+  background-color: '#13BF98';
+}
+
+
 .slick-next{
-  right: -50px;
+  right: -64px;
 }
 .slick-prev {
-  left: -50px;
+  left: -64px;
 }
 
 

@@ -35,6 +35,16 @@ export function LocationDetailPage() {
     slidesToScroll: 1,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: false
+        }
+      }
+    ]
   };
 
   return (
@@ -63,16 +73,18 @@ export function LocationDetailPage() {
         </Box>
       </Paper >
 
-      <Box sx={{ px: { xs: 8, sm: 10, md: 18, xl: 62 } }}>
+      <Box sx={{ px: { xs: 1, sm: 10, md: 38, xl: 62 } }}>
         <Typography
-          sx={{ maxWidth: '500px' }}
+          sx={{ maxWidth: '400px' }}
           variant='h5'
           fontWeight='500'
           color='#174661'
         >
           Almoço no Restaurante Porto de Canoas nas Cataratas
         </Typography>
-
+        <Typography>
+          localization
+        </Typography>
         <Divider sx={{ my: 4 }} />
 
         <Box>
@@ -86,31 +98,29 @@ export function LocationDetailPage() {
                     key={index}
                   />
                 )
-
               })}
 
             </Slider>
-
           </Box>
 
           <Box>
             <Typography gutterBottom variant='h6' color='#174661' component='h2'>
               Descrição
             </Typography>
-            <Typography variant='body2' color='#5E6D77' component='div'>
+            <Typography variant='body2' color='#5E6D77' component='div' lineHeight='24px'>
               {option[0].description}
             </Typography>
 
-
             <TableDays />
+
           </Box>
         </Box>
 
         <Link
           sx={{
             position: 'fixed',
-            bottom: 30,
-            right: 30,
+            bottom: 24,
+            right: 24,
             borderRadius: '50%',
             p: 1,
           }}
@@ -118,11 +128,17 @@ export function LocationDetailPage() {
           href={'https://api.whatsapp.com/send/?phone=5571988462999&text&type=phone_number&app_absent=0'}
           target='_blank'
         >
-          <WhatsAppIcon
-            sx={{
-              color: '#25D366',
-              fontSize: 40,
-            }} />
+          <Box >
+            <WhatsAppIcon
+              sx={{
+                boxShadow: '0px 1px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
+                fontSize: 64,
+                borderRadius: '50%',
+                padding: '16px',
+                color: '#fff',
+                bgcolor: '#25D366',
+              }} />
+          </Box>
         </Link>
       </Box>
     </Box >

@@ -55,11 +55,22 @@ export function MediaCard({ title, subtitle, option }: IProps) {
         }
       },
       {
-        breakpoint: 414,
+        breakpoint: 600,
         settings: {
           className: 'center',
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 428,
+        settings: {
+          className: 'center',
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false
+
         }
       },
     ]
@@ -69,7 +80,7 @@ export function MediaCard({ title, subtitle, option }: IProps) {
     navigate('/detalhe-do-local')
   }
   return (
-    <Box sx={{ width: { xs: '70%', xl: '60%' }, mx: 'auto' }}>
+    <Box sx={{ width: { xs: '92%', sm: '70%', xl: '60%' }, mx: 'auto' }}>
       <Box sx={{ mb: 3, mt: 4 }}>
         <Typography
           component='h3'
@@ -93,9 +104,9 @@ export function MediaCard({ title, subtitle, option }: IProps) {
         {option.map((item: any, index: any) => {
           return (
             <Box>
-              <Card sx={{ maxWidth: 265, mx: 0.6 }} variant='outlined'>
+              <Card sx={{ maxWidth: { xs: '100%', sm: 265 }, mx: 0.6 }} variant='outlined'>
                 <CardMedia
-                  sx={{ height: 140 }}
+                  sx={{ height: 160 }}
                   image={item.image}
                   key={index}
                 />

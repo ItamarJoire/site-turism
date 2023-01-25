@@ -8,8 +8,8 @@ import "slick-carousel/slick/slick-theme.css";
 // import { Test } from "../components/test/Test";
 
 const cover = {
-  title: 'Conheça nossos comércios e faça sua viagem',
-  description: "Encontre o que há de melhor nas nossas Ilhas",
+  title: 'Conheça a Ilha de Itaparica',
+  description: `Aqui esrão as melhores opções para você! Planeje já a sua visita, venha curtir essa maravilha!`,
   image: `${Img}`,
   imageText: 'Praia',
 }

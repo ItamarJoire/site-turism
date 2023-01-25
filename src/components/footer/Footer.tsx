@@ -1,16 +1,11 @@
-import {
-  Box,
-  Container,
-  Typography,
-  Link
-} from '@mui/material';
+import { Box, Container, Typography, Link } from '@mui/material';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="#fff">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Itaparica
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
