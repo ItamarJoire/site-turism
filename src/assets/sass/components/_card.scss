@@ -6,7 +6,7 @@ h2, p{
 }
 
 h2{
-  -webkit-line-clamp: 1;
+  // -webkit-line-clamp: 1;
 }
 
 p{
@@ -17,20 +17,26 @@ p{
 .slick-next,
 .slick-prev {
   z-index: 99 !important;
-  width: 2.4rem;
-  height: 2.4rem;
-  
-  padding: 6px;
-  
-  border: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 13px;
+  border: 1px solid #13BF98;
   border-radius: 32px;
- 
+  transition: border 100ms;
   cursor: pointer;
-  background-color: #13BF98;
+  // background-color: #13BF98;
   
   &:hover{
-    background-color:#13BF98;
+
+    border:2px solid #13BF98 ;
   }
+}
+
+.slick-next{
+  right: -50px;
+}
+.slick-prev {
+  left: -50px;
 }
 
 

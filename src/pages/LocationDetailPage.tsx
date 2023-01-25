@@ -8,8 +8,8 @@ import { useLocation } from "../hooks/useLocation";
 
 import Slider, { CustomArrowProps } from 'react-slick'
 
-import LeftArrow from '../assets/images/left-arrow.svg'
-import RightArrow from '../assets/images/right-arrow.svg'
+import LeftArrow from '../assets/images/left.svg'
+import RightArrow from '../assets/images/right.svg'
 import { TableDays } from '../components';
 
 const cover = {
@@ -64,11 +64,12 @@ export function LocationDetailPage() {
         </Box>
       </Paper >
 
-      <Box sx={{ px: { xs: 4, sm: 10, md: 32 } }}>
+      <Box sx={{ px: { xs: 8, sm: 10, md: 18, xl: 62 } }}>
         <Typography
           sx={{ maxWidth: '500px' }}
           variant='h5'
           fontWeight='500'
+          color='#174661'
         >
           Almoço no Restaurante Porto de Canoas nas Cataratas
         </Typography>
@@ -93,12 +94,11 @@ export function LocationDetailPage() {
 
           </Box>
 
-
           <Box>
-            <Typography gutterBottom variant='h5' component='h2'>
+            <Typography gutterBottom variant='h6' color='#174661' component='h2'>
               Descrição
             </Typography>
-            <Typography variant='body1' color='text.secondary' component='div'>
+            <Typography variant='body2' color='#5E6D77' component='div'>
               {option[0].description}
             </Typography>
 

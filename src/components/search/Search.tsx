@@ -1,211 +1,213 @@
-import { useTheme, Box, AppBar, Toolbar, Grid, TextField, MenuItem, Button, Icon } from '@mui/material';
+export { }
 
-import { useLocation } from '../../hooks/useLocation';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+// import { useTheme, Box, AppBar, Toolbar, Grid, TextField, MenuItem, Button, Icon } from '@mui/material';
 
-const locations = [
-  {
-    location: 'Itaparica',
-    restaurant: [
-      {
-        id: 1,
-        title: 'Porto Canoas nas Cataratas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/1"
-      },
-      {
-        id: 2,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 3,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 4,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-    ],
-    commerce: [
-      {
-        id: 1,
-        title: 'Porto Canoas nas Cataratas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/1"
-      },
-      {
-        id: 2,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 3,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 4,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-    ],
-  },
-  {
-    location: 'Cidade 2',
-    restaurant: [
-      {
-        id: 1,
-        title: 'Rest da cidade 2',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/1"
-      },
-      {
-        id: 2,
-        title: 'Rest da cidade 2',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 3,
-        title: 'Rest da cidade 2',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 4,
-        title: 'Rest da cidade 2',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-    ],
-    commerce: [
-      {
-        id: 1,
-        title: 'Porto Canoas nas Cataratas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/1"
-      },
-      {
-        id: 2,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 3,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-      {
-        id: 4,
-        title: 'Porto Canoas',
-        description: 'Lorem Ipsum ',
-        image: "https://source.unsplash.com/random/?restaurant/2"
-      },
-    ],
-  }
-]
+// import { useLocation } from '../../hooks/useLocation';
+// import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
-export function Search() {
-  const theme = useTheme()
-  const { setLocal } = useLocation()
+// const locations = [
+//   {
+//     location: 'Itaparica',
+//     restaurant: [
+//       {
+//         id: 1,
+//         title: 'Porto Canoas nas Cataratas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/1"
+//       },
+//       {
+//         id: 2,
+//         title: 'Porto Canoas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//       {
+//         id: 3,
+//         title: 'Porto Canoas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//       {
+//         id: 4,
+//         title: 'Porto Canoas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//     ],
+//     commerce: [
+//       {
+//         id: 1,
+//         title: 'Porto Canoas nas Cataratas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/1"
+//       },
+//       {
+//         id: 2,
+//         title: 'Porto Canoas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//       {
+//         id: 3,
+//         title: 'Porto Canoas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//       {
+//         id: 4,
+//         title: 'Porto Canoas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//     ],
+//   },
+//   {
+//     location: 'Cidade 2',
+//     restaurant: [
+//       {
+//         id: 1,
+//         title: 'Rest da cidade 2',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/1"
+//       },
+//       {
+//         id: 2,
+//         title: 'Rest da cidade 2',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//       {
+//         id: 3,
+//         title: 'Rest da cidade 2',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//       {
+//         id: 4,
+//         title: 'Rest da cidade 2',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//     ],
+//     commerce: [
+//       {
+//         id: 1,
+//         title: 'Porto Canoas nas Cataratas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/1"
+//       },
+//       {
+//         id: 2,
+//         title: 'Porto Canoas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//       {
+//         id: 3,
+//         title: 'Porto Canoas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//       {
+//         id: 4,
+//         title: 'Porto Canoas',
+//         description: 'Lorem Ipsum ',
+//         image: "https://source.unsplash.com/random/?restaurant/2"
+//       },
+//     ],
+//   }
+// ]
 
-  // const [data, isLoading] = useQuery("locations", () => {
-  //   return axios
-  //     .get('http://localhost:3001/locations')
-  //     .then(response => response.data)
-  // })
+// export function Search() {
+//   const theme = useTheme()
+//   const { setLocal } = useLocation()
 
-  // if (isLoading) {
-  //   return console.log('Carregando...')
-  // }
+//   // const [data, isLoading] = useQuery("locations", () => {
+//   //   return axios
+//   //     .get('http://localhost:3001/locations')
+//   //     .then(response => response.data)
+//   // })
+
+//   // if (isLoading) {
+//   //   return console.log('Carregando...')
+//   // }
 
 
-  function handleSearch(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const dataEvent = new FormData(event.currentTarget)
-    const result = dataEvent.get('option')
+//   function handleSearch(event: React.FormEvent<HTMLFormElement>) {
+//     event.preventDefault()
+//     const dataEvent = new FormData(event.currentTarget)
+//     const result = dataEvent.get('option')
 
-    const newArray = locations.filter((item) => {
-      return item.location === result
-    })
+//     const newArray = locations.filter((item) => {
+//       return item.location === result
+//     })
 
-    setLocal(newArray)
-  }
+//     setLocal(newArray)
+//   }
 
-  return (
-    <Box sx={{ py: theme.spacing(4), pb: theme.spacing(6) }} >
-      <AppBar
-        position="static"
-        elevation={0}
-        sx={{
-          padding: theme.spacing(1),
-          borderRadius: 2,
-          background: 'white',
-          borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
-          maxWidth: '600px'
-        }}
-      >
-        <Toolbar >
-          <Grid
-            component='form'
-            onSubmit={handleSearch}
-            container
-            alignItems="center"
-            spacing={2}
-          >
-            <Grid item>
-              <LocationOnOutlinedIcon sx={{ color: '#58585F', display: 'block' }} />
-            </Grid>
+//   return (
+//     <Box sx={{ py: theme.spacing(4), pb: theme.spacing(6) }} >
+//       <AppBar
+//         position="static"
+//         elevation={0}
+//         sx={{
+//           padding: theme.spacing(1),
+//           borderRadius: 2,
+//           background: 'white',
+//           borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+//           maxWidth: '600px'
+//         }}
+//       >
+//         <Toolbar >
+//           <Grid
+//             component='form'
+//             onSubmit={handleSearch}
+//             container
+//             alignItems="center"
+//             spacing={2}
+//           >
+//             <Grid item>
+//               <LocationOnOutlinedIcon sx={{ color: '#58585F', display: 'block' }} />
+//             </Grid>
 
-            <Grid item xs>
-              <TextField
-                variant="standard"
-                name='option'
-                select
-                defaultValue='Itaparica'
-                fullWidth
-                placeholder="Escolha o tipo de comércio"
-                InputProps={{
-                  disableUnderline: true,
-                  sx: { fontSize: 'default', color: '#58585F' },
-                }}
-              >
+//             <Grid item xs>
+//               <TextField
+//                 variant="standard"
+//                 name='option'
+//                 select
+//                 defaultValue='Itaparica'
+//                 fullWidth
+//                 placeholder="Escolha o tipo de comércio"
+//                 InputProps={{
+//                   disableUnderline: true,
+//                   sx: { fontSize: 'default', color: '#58585F' },
+//                 }}
+//               >
 
-                {locations.map((place) => (
-                  <MenuItem key={place.location} value={place.location}>
-                    {place.location}
-                  </MenuItem>
+//                 {locations.map((place) => (
+//                   <MenuItem key={place.location} value={place.location}>
+//                     {place.location}
+//                   </MenuItem>
 
-                ))}
-              </TextField>
-            </Grid>
+//                 ))}
+//               </TextField>
+//             </Grid>
 
-            <Grid item>
-              <Button
-                sx={{ textTransform: 'capitalize', mr: 1, borderRadius: 36 }}
-                variant="contained"
-                type='submit'
-                size='medium'
-                disableElevation
-                startIcon={<Icon>search</Icon>}
-              >
-                Buscar
-              </Button>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-    </Box>
-  )
-}
+//             <Grid item>
+//               <Button
+//                 sx={{ textTransform: 'capitalize', mr: 1, borderRadius: 36 }}
+//                 variant="contained"
+//                 type='submit'
+//                 size='medium'
+//                 disableElevation
+//                 startIcon={<Icon>search</Icon>}
+//               >
+//                 Buscar
+//               </Button>
+//             </Grid>
+//           </Grid>
+//         </Toolbar>
+//       </AppBar>
+//     </Box>
+//   )
+// }

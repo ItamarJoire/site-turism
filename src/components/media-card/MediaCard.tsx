@@ -3,8 +3,8 @@ import { Box, Typography, Card, CardMedia, CardContent, CardActions, Button } fr
 import { useNavigate } from 'react-router-dom'
 
 import Slider, { CustomArrowProps } from 'react-slick'
-import LeftArrow from '../../assets/images/left-arrow.svg'
-import RightArrow from '../../assets/images/right-arrow.svg'
+import LeftArrow from '../../assets/images/left.svg'
+import RightArrow from '../../assets/images/right.svg'
 
 interface IProps {
   title: string
@@ -57,6 +57,7 @@ export function MediaCard({ title, subtitle, option }: IProps) {
       {
         breakpoint: 414,
         settings: {
+          className: 'center',
           slidesToShow: 1,
           slidesToScroll: 1,
         }
@@ -68,19 +69,20 @@ export function MediaCard({ title, subtitle, option }: IProps) {
     navigate('/detalhe-do-local')
   }
   return (
-    <Box sx={{ width: '90%', mx: 'auto' }}>
+    <Box sx={{ width: { xs: '70%', xl: '60%' }, mx: 'auto' }}>
       <Box sx={{ mb: 3, mt: 4 }}>
         <Typography
           component='h3'
+          fontWeight='400'
           variant='h5'
-          color='text.secondary'
+          color='#174661'
         >
           {title}
         </Typography>
         <Typography
           component='p'
           variant='body2'
-          color='text.secondary'
+          color='#5E6D77'
           gutterBottom
         >
           {subtitle}
@@ -91,7 +93,7 @@ export function MediaCard({ title, subtitle, option }: IProps) {
         {option.map((item: any, index: any) => {
           return (
             <Box>
-              <Card sx={{ maxWidth: 345, mx: 0.8 }} variant='outlined'>
+              <Card sx={{ maxWidth: 265, mx: 0.6 }} variant='outlined'>
                 <CardMedia
                   sx={{ height: 140 }}
                   image={item.image}
@@ -99,16 +101,16 @@ export function MediaCard({ title, subtitle, option }: IProps) {
                 />
 
                 <CardContent>
-                  <Typography gutterBottom variant='h6' component='h2'>
+                  <Typography gutterBottom variant='body1' fontWeight='500' component='h2' color='#174661'>
                     {item.title}
                   </Typography>
 
-                  <Typography variant='body2' color='text.secondary'>
+                  {/* <Typography variant='body2' color='text.secondary'>
                     {item.description}
-                  </Typography>
+                  </Typography> */}
                 </CardContent>
 
-                <CardActions sx={{ p: 2 }}>
+                <CardActions sx={{ p: 2, display: 'flex', justifyContent: 'end' }}>
                   <Button
                     sx={{ textTransform: 'capitalize' }}
                     size='small'
@@ -118,7 +120,7 @@ export function MediaCard({ title, subtitle, option }: IProps) {
                     component='a'
                     target='_blank'
                   >
-                    Mais detalhes
+                    Mais informações
                   </Button>
                 </CardActions>
               </Card>

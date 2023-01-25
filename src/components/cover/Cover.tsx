@@ -1,12 +1,6 @@
-import {
-  Paper,
-  Box,
-  Grid,
-  Typography,
-  useMediaQuery
-} from '@mui/material';
+import { Paper, Box, Grid, Typography, useMediaQuery } from '@mui/material';
 
-import { Search } from '../search/Search';
+// import { Search } from '../search/Search';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 
@@ -36,6 +30,7 @@ export function Cover(props: ICoverProps) {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundImage: `url(${post.image})`,
+        height: '60vh'
       }}
     >
       <Box
@@ -43,12 +38,12 @@ export function Cover(props: ICoverProps) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          py: 2, px: 6, mb: 6
+          py: 2, px: 6, mb: 6,
         }}
       >
         <Box sx={{
           display: 'flex',
-          alignItems: 'center'
+          alignItems: 'center',
         }}>
           <img src={Logo} alt='Logotipo' style={{ width: '44px', height: '44px', marginRight: '16px' }} />
           <Typography fontWeight={700} letterSpacing={2} variant='h6' paddingTop={1}>
@@ -90,7 +85,7 @@ export function Cover(props: ICoverProps) {
               {post.description}
             </Typography>
 
-            <Search />
+            {/* <Search /> */}
 
             <Box
               component='a'

@@ -7,7 +7,7 @@ import {
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
+    <Typography variant="body2" color="#fff">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
         Your Website
@@ -30,17 +30,14 @@ export function Footer() {
       <Box
         component="footer"
         sx={{
-          py: 3,
+          py: 8,
           px: 2,
           mt: 'auto',
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
+          backgroundColor: '#113448'
         }}
       >
         <Container maxWidth="xl">
-          <Typography variant="body1">
+          <Typography color='#fff' variant="body1">
             My sticky footer can be found here.
           </Typography>
           <Copyright />
