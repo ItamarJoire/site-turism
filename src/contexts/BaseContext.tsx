@@ -19,7 +19,7 @@ interface ILocationArray {
 }
 
 interface ILocationData {
-  locations: ILocationArray[] | undefined
+  locations: ILocationArray[]
 }
 
 interface IChildren {
@@ -38,10 +38,9 @@ export function BaseContextProvider({ children }: IChildren) {
   }, [])
 
   return (
-    <></>
-    // <BaseContext.Provider value={{ list, setList }}>
+    <BaseContext.Provider value={{ list, setList }}>
 
-    //   {children}
-    // </BaseContext.Provider>
+      {children}
+    </BaseContext.Provider>
   )
 }

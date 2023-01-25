@@ -4,7 +4,6 @@ import { App } from './App';
 
 import '../src/assets/sass/main.scss'
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

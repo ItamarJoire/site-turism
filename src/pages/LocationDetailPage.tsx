@@ -1,4 +1,3 @@
-// import { Cover } from "../components";
 import Img from '../assets/images/praia.jpg'
 import { Paper, Box, Typography, Divider, CardMedia, Link } from '@mui/material'
 

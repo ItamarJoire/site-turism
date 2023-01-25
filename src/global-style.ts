@@ -6,7 +6,6 @@ export const theme = createTheme({
       main: '#13BF98',
       dark: '#0F9476',
       contrastText: '#fff',
-
     },
     secondary: {
       main: '#10B5CB'
@@ -19,7 +18,6 @@ export const theme = createTheme({
     fontSize: 14,
     fontFamily: 'Poppins, sans-serif',
   },
-
 })
 
 

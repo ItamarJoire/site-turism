@@ -17,8 +17,6 @@ const cover = {
 export function MainPage(): JSX.Element {
   const { local } = useLocation()
 
-
-
   return (
     <>
       <Cover post={cover} />
