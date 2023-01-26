@@ -45,31 +45,46 @@ export function Cover(props: ICoverProps) {
           display: 'flex',
           alignItems: 'center',
         }}>
-          <img src={Logo} alt='Logotipo' style={{ width: '44px', height: '44px', marginRight: '16px' }} />
-          <Typography fontWeight={700} letterSpacing={2} variant='h6' paddingTop={1}>
+          <img
+            src={Logo}
+            alt='Logotipo'
+            style={{ width: '44px', height: '44px', marginRight: '16px' }}
+          />
+          <Typography
+            variant='h6'
+            fontWeight={700}
+            letterSpacing={2}
+            paddingTop={1}
+          >
             Turism
           </Typography>
         </Box>
         <InstagramIcon />
       </Box>
 
-      {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+      {
+        <img
+          src={post.image}
+          alt={post.imageText}
+          style={{ display: 'none' }}
+        />
+      }
 
       <Grid container >
         <Grid item md={10}>
           <Box
+            padding={smDown ? 6 : 2}
             sx={{
               position: 'relative',
               marginX: { xs: 'none', xl: 'auto' },
               width: { xs: 'none', xl: '90%' },
             }}
-            padding={smDown ? 6 : 2}
           >
             <Typography
+              variant="h4"
+              component="h1"
               fontSize={smDownText ? '42px' : '34px'}
               fontWeight='600'
-              component="h1"
-              variant="h4"
               color="inherit"
               gutterBottom
             >
@@ -77,12 +92,12 @@ export function Cover(props: ICoverProps) {
             </Typography>
 
             <Typography
+              variant="h4"
               fontSize={smDownText ? '20px' : '18px'}
               maxWidth='700px'
-              variant="h4"
-              color="#inherit"
               paragraph
               lineHeight='30px'
+              color="#inherit"
             >
               {post.description}
             </Typography>

@@ -1,10 +1,11 @@
-import { Box, Typography, Card, CardMedia, CardContent, CardActions, Button } from '@mui/material'
+import { Box, Typography, Card, CardMedia, CardContent, Paper } from '@mui/material'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 import { useNavigate } from 'react-router-dom'
 
 import Slider, { CustomArrowProps } from 'react-slick'
-import LeftArrow from '../../assets/images/left.svg'
-import RightArrow from '../../assets/images/right.svg'
+import LeftArrow from '../../assets/images/left-arrow.svg'
+import RightArrow from '../../assets/images/right-arrow.svg'
 
 interface IProps {
   title: string
@@ -79,6 +80,7 @@ export function MediaCard({ title, subtitle, option }: IProps) {
   function navigateLocationDatailPage() {
     navigate('/detalhe-do-local')
   }
+
   return (
     <Box sx={{ width: { xs: '92%', sm: '70%', xl: '60%' }, mx: 'auto' }}>
       <Box sx={{ mb: 3, mt: 4 }}>
@@ -104,41 +106,57 @@ export function MediaCard({ title, subtitle, option }: IProps) {
         {option.map((item: any, index: any) => {
           return (
             <Box>
-              <Card sx={{ maxWidth: { xs: '100%', sm: 265 }, mx: 0.6 }} variant='outlined'>
+              <Card
+                variant='outlined'
+                sx={{
+                  maxWidth: { xs: '100%', sm: 265 },
+                  mx: 0.6
+                }}
+              >
                 <CardMedia
-                  sx={{ height: 160 }}
-                  image={item.image}
                   key={index}
-                />
-
-                <CardContent>
-                  <Typography gutterBottom variant='body1' fontWeight='500' component='h2' color='#174661'>
-                    {item.title}
-                  </Typography>
-
-                  {/* <Typography variant='body2' color='text.secondary'>
-                    {item.description}
-                  </Typography> */}
-                </CardContent>
-
-                <CardActions sx={{ p: 2, display: 'flex', justifyContent: 'end' }}>
-                  <Button
-                    sx={{ textTransform: 'capitalize' }}
-                    size='small'
-                    disableElevation
-                    variant='contained'
-                    onClick={navigateLocationDatailPage}
-                    component='a'
-                    target='_blank'
+                  image={item.image}
+                  sx={{ height: 260 }}
+                >
+                  <Paper
+                    sx={{
+                      position: 'relative',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      alignItems: 'space-around',
+                      height: '100%',
+                      color: 'red',
+                      background: 'linear-gradient(360deg, #000000 -23.59%, rgba(86, 86, 86, 0) 64.78%)'
+                    }}
                   >
-                    Mais informações
-                  </Button>
-                </CardActions>
+                    <CardContent
+                      onClick={navigateLocationDatailPage}
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'end',
+                        cursor: 'pointer'
+                      }}>
+                      <OpenInNewIcon sx={{ color: '#fff' }} />
+                    </CardContent>
+
+                    <CardContent>
+                      <Typography
+                        variant='body1'
+                        component='h2'
+                        fontWeight='500'
+                        color='#fff'
+                      >
+                        {item.title}
+                      </Typography>
+                    </CardContent>
+                  </Paper>
+                </CardMedia>
               </Card>
             </Box>
           )
         })}
-      </Slider>
-    </Box>
+      </Slider >
+    </Box >
   )
 }

@@ -5,7 +5,6 @@ import { useLocation } from "../hooks/useLocation";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import { Test } from "../components/test/Test";
 
 const cover = {
   title: 'Conheça a Ilha de Itaparica',
@@ -20,7 +19,6 @@ export function MainPage(): JSX.Element {
   return (
     <>
       <Cover post={cover} />
-      {/* <Test /> */}
       <MediaCard title='Restaurantes' subtitle='Opções deliciosas esperando por você' option={local[0].restaurant} />
     </>
   )

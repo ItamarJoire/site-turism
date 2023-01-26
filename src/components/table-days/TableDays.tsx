@@ -28,7 +28,13 @@ export function TableDays() {
         borderRadius: 1,
       }}
     >
-      <Table sx={{ minWidth: 320, maxWidth: 700 }} aria-label="simple table" >
+      <Table
+        aria-label="simple table"
+        sx={{
+          minWidth: 320,
+          maxWidth: 700
+        }}
+      >
         <TableBody >
           {rows.map((row) => (
             <TableRow key={row.day}>
