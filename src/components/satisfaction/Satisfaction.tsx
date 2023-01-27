@@ -20,7 +20,7 @@ function getLabelText(value: any) {
   return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
 }
 
-export default function Satisfactor() {
+export function Satisfactor() {
   const [value, setValue] = useState<number | null>(2);
   const [hover, setHover] = useState(-1);
 

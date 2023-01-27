@@ -6,15 +6,18 @@ import { Footer } from './components';
 import { PublicRoutes } from './routes';
 
 import { theme } from "./global-style";
+import { BaseContextProvider } from './contexts/BaseContext';
 
 export function App() {
   return (
     <ThemeProvider theme={theme}>
-      <LocationContextProvider>
-        <CssBaseline />
-        <PublicRoutes />
-        <Footer />
-      </LocationContextProvider>
+      <BaseContextProvider>
+        <LocationContextProvider>
+          <CssBaseline />
+          <PublicRoutes />
+          <Footer />
+        </LocationContextProvider>
+      </BaseContextProvider>
     </ThemeProvider>
   );
 }

@@ -105,7 +105,7 @@ export function MediaCard({ title, subtitle, option }: IProps) {
       <Slider {...settings}>
         {option.map((item: any, index: any) => {
           return (
-            <Box>
+            <Box key={index}>
               <Card
                 variant='outlined'
                 sx={{
