@@ -2,9 +2,25 @@ import { useEffect, createContext, useState, ReactNode, Dispatch, SetStateAction
 
 import axios from 'axios'
 
+type TImg = {
+  image: string
+}
+
+interface IProps {
+  id: number
+  title: string
+  description: string
+  images: TImg[]
+}
+
+interface ILocationProps {
+  name: string
+  restaurants: IProps[]
+}
+
 interface ILocationData {
-  list: ILocationData[]
-  setList: Dispatch<SetStateAction<ILocationData[]>>
+  list: ILocationProps[]
+  setList: Dispatch<SetStateAction<ILocationProps[]>>
 }
 
 interface IChildren {
@@ -14,7 +30,7 @@ interface IChildren {
 export const BaseContext = createContext({} as ILocationData)
 
 export function BaseContextProvider({ children }: IChildren) {
-  const [list, setList] = useState<ILocationData[]>([])
+  const [list, setList] = useState<ILocationProps[]>([])
 
   useEffect(() => {
     axios

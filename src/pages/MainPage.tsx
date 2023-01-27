@@ -20,10 +20,29 @@ export function MainPage(): JSX.Element {
   const { local } = useLocation()
   const { list } = useContext(BaseContext)
 
-  console.log(list)
   return (
     <>
       <Cover post={cover} />
+      {
+        list.map(item => {
+          return (
+            <div>
+              <h2>{item.name}</h2>
+              {
+                item.restaurants.map(item => {
+                  return (
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+
+                    </div>
+                  )
+                })
+              }
+            </div>
+          )
+        })
+      }
       <MediaCard title='Restaurantes' subtitle='Opções deliciosas esperando por você' option={local[0].restaurant} />
     </>
   )
