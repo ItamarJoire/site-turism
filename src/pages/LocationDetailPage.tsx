@@ -1,8 +1,9 @@
 import { Paper, Box, Typography, Divider, CardMedia, Link } from '@mui/material'
+import { useParams } from 'react-router-dom';
 
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-import { useLocation } from "../hooks/useLocation";
+// import { useLocation } from "../hooks/useLocation";
 
 import Slider, { CustomArrowProps } from 'react-slick'
 
@@ -12,14 +13,24 @@ import LeftArrow from '../assets/images/left-arrow.svg'
 import RightArrow from '../assets/images/right-arrow.svg'
 
 import Img from '../assets/images/praia.jpg'
+import { useDatabase } from '../hooks/useDatabase';
 
 const cover = {
   image: `${Img}`
 }
 
 export function LocationDetailPage() {
-  const { local } = useLocation()
-  const option = local[0].restaurant
+  const { id } = useParams()
+  const { list } = useDatabase()
+
+  const result = list[0].restaurants.filter(check)
+
+  function check(value: any) {
+    return value.id === (id ? Number.parseInt(id, 10) : null)
+  }
+
+  console.log('result', result)
+  console.log('Id: ', id)
 
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }: CustomArrowProps) => (
     <img src={LeftArrow} alt="prevArrow" {...props} />
@@ -84,18 +95,15 @@ export function LocationDetailPage() {
         >
           Almoço no Restaurante Porto de Canoas nas Cataratas
         </Typography>
-        {/* <Typography>
-          localization
-        </Typography> */}
         <Divider sx={{ my: 4 }} />
 
         <Box>
           <Box sx={{ mb: 8 }}>
             <Slider {...settings}>
-              {option.map((item: any, index: any) => {
+              {result.map((item: any) => {
                 return (
                   <CardMedia
-                    key={index}
+                    key={id}
                     image={item.image}
                     sx={{ height: { xs: 340, md: 460 } }}
                   />
@@ -111,15 +119,16 @@ export function LocationDetailPage() {
               component='h2'
               color='#174661'
             >
-              Descrição
             </Typography>
+            Descrição
             <Typography
               variant='body2'
               component='div'
               lineHeight='24px'
               color='#5E6D77'
             >
-              {option[0].description}
+              {result[0].description}
+
             </Typography>
 
             <TableDays />

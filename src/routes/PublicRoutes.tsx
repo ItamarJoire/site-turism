@@ -5,7 +5,7 @@ export function PublicRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='detalhe-do-local' element={<LocationDetailPage />} />
+        <Route path='detalhe-do-local/:id' element={<LocationDetailPage />} />
         <Route path='*' element={<MainPage />} />
       </Routes>
     </BrowserRouter>
