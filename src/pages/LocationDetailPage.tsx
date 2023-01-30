@@ -1,4 +1,4 @@
-import { Paper, Box, Typography, Divider, CardMedia, Link } from '@mui/material'
+import { Paper, Box, Typography, Divider, Card, CardMedia, Link } from '@mui/material'
 import { useParams } from 'react-router-dom';
 
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -93,20 +93,22 @@ export function LocationDetailPage() {
           color='#174661'
           sx={{ maxWidth: '400px' }}
         >
-          Almoço no Restaurante Porto de Canoas nas Cataratas
+          {result[0].title}
         </Typography>
         <Divider sx={{ my: 4 }} />
 
         <Box>
           <Box sx={{ mb: 8 }}>
             <Slider {...settings}>
-              {result.map((item: any) => {
+              {result[0].images.map((item: any) => {
                 return (
-                  <CardMedia
-                    key={id}
-                    image={item.image}
-                    sx={{ height: { xs: 340, md: 460 } }}
-                  />
+                  <Card variant='outlined'>
+                    <CardMedia
+                      key={item.id}
+                      image={item.image}
+                      sx={{ height: { xs: 340, md: 460 } }}
+                    />
+                  </Card>
                 )
               })}
             </Slider>

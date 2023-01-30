@@ -36,7 +36,6 @@ export function DatabaseContextProvider({ children }: IChildren) {
     try {
       const response = await axios.get('http://localhost:3001/locations')
       const data = response.data
-      console.log(data)
       setList(data)
 
     } catch (error) {

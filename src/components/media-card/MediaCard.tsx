@@ -1,10 +1,8 @@
 import { useDatabase } from '../../hooks/useDatabase';
 import { Link } from 'react-router-dom';
 import { Box, Typography, Card, CardMedia, CardContent, Paper } from '@mui/material'
+
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-
-// import { useNavigate } from 'react-router-dom'
-
 
 import Slider, { CustomArrowProps } from 'react-slick'
 import LeftArrow from '../../assets/images/left-arrow.svg'
@@ -17,7 +15,6 @@ interface IProps {
 
 export function MediaCard({ title, subtitle }: IProps) {
   const { list } = useDatabase()
-  // const navigate = useNavigate()
 
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }: CustomArrowProps) => (
     <img src={LeftArrow} alt="prevArrow" {...props} />
@@ -74,15 +71,10 @@ export function MediaCard({ title, subtitle }: IProps) {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false
-
         }
       },
     ]
   }
-
-  // function navigateLocationDatailPage() {
-  //   navigate('/detalhe-do-local/')
-  // }
 
   return (
     <Box sx={{ width: { xs: '92%', sm: '70%', xl: '60%' }, mx: 'auto' }} >
@@ -118,10 +110,9 @@ export function MediaCard({ title, subtitle }: IProps) {
                   mx: 0.6
                 }}
               >
-                <div>{item.id}</div>
                 <CardMedia
                   key={item.id}
-                  image={item.image}
+                  image={item.images[0].image}
                   sx={{ height: 260 }}
                 >
                   <Paper
@@ -137,13 +128,17 @@ export function MediaCard({ title, subtitle }: IProps) {
                     }}
                   >
                     <CardContent
-                      // onClick={navigateLocationDatailPage}
                       sx={{
                         display: 'flex',
                         justifyContent: 'end',
                         cursor: 'pointer'
                       }}>
-                      <Link to={`/detalhe-do-local/${item.id}`}><OpenInNewIcon sx={{ color: '#fff' }} /></Link>
+
+                      <Link
+                        to={`/detalhe-do-local/${item.id}`}
+                      >
+                        <OpenInNewIcon sx={{ color: '#fff' }} />
+                      </Link>
                     </CardContent>
 
                     <CardContent>
