@@ -1,6 +1,6 @@
 import { useDatabase } from '../../hooks/useDatabase';
 import { Link } from 'react-router-dom';
-import { Box, Typography, Card, CardMedia, CardContent, Paper } from '@mui/material'
+import { Box, Typography, Card, CardMedia, CardContent, Paper, Skeleton } from '@mui/material'
 
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
@@ -99,7 +99,7 @@ export function MediaCard({ title, subtitle }: IProps) {
 
       <Slider {...settings}>
         {list.length === 0 ? (
-          <p>Carregando...</p>
+          <Skeleton variant="rectangular" width={210} height={118} />
         ) : (list[0].restaurants.map((item: any) => {
           return (
             <Box key={item.id} sx={{ display: 'flex' }}>
