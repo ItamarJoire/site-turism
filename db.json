@@ -5,8 +5,8 @@
       "restaurants": [
         {
           "id": 1,
-          "title": "Restaurante 1 (Itaparica)",
-          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+          "title": "Jardim da Ilha",
+          "description": "O restaurante conta com um sistema de buffet internacional. O local possui um agradável ambiente interno e o lado externo conta com uma vista para a parte superior das Cataratas. Garçons simpáticos e atenciosos e um rigoroso padrão de qualidade são alguns dos diferenciais do local. Além disso, o que mais surpreende neste almoço é o aroma da comida que se mistura com a natureza do parque, o que permite criar uma memória única deste local.",
           "images": [
             {
               "id": 1,
