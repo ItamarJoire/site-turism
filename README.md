@@ -3,7 +3,7 @@
 
  &nbsp;
 
-Para instalar execute o comando: `npm install`
+Para instalar as dependências execute o comando: `npm install`
 
 Para dar start na aplicação web execute: `npm start`
 
