@@ -156,89 +156,14 @@ export function MediaCard({ title, subtitle }: IProps) {
               </Card>
             </Box>
           )
+
         }))}
+
       </Slider >
+
+
     </Box >
 
-    // <Box sx={{ width: { xs: '92%', sm: '70%', xl: '60%' }, mx: 'auto' }} >
-    //   <Box sx={{ mb: 3, mt: 4 }}>
-    //     <Typography
-    //       component='h3'
-    //       fontWeight='400'
-    //       variant='h5'
-    //       color='#174661'
-    //     >
-    //       {title}
-    //     </Typography>
-    //     <Typography
-    //       component='p'
-    //       variant='body2'
-    //       color='#5E6D77'
-    //       gutterBottom
-    //     >
-    //       {subtitle}
-    //     </Typography>
-    //   </Box>
 
-    // <Slider {...settings}>
-    /* {list.map((item, index) => {
-      return (
-        <Box key={index} sx={{ display: 'flex' }}>
-          <Card
-            variant='outlined'
-            sx={{
-              maxWidth: { xs: '100%', sm: 265 },
-              mx: 0.6
-            }}
-          >
-            {item.restaurants.map(item => {
-              return (
-                <CardMedia
-                  key={item.id}
-                  image={item.images[0].image}
-                  sx={{ height: 260 }}
-                >
-                  <Paper
-                    sx={{
-                      position: 'relative',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      alignItems: 'space-around',
-                      height: '100%',
-                      color: 'red',
-                      background: 'linear-gradient(360deg, #000000 -23.59%, rgba(86, 86, 86, 0) 64.78%)'
-                    }}
-                  >
-                    <CardContent
-                      onClick={navigateLocationDatailPage}
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'end',
-                        cursor: 'pointer'
-                      }}>
-                      <OpenInNewIcon sx={{ color: '#fff' }} />
-                    </CardContent>
-
-                    <CardContent>
-                      <Typography
-                        variant='body1'
-                        component='h2'
-                        fontWeight='500'
-                        color='#fff'
-                      >
-                        {item.title}
-                      </Typography>
-                    </CardContent>
-                  </Paper>
-                </CardMedia>
-              )
-            })}
-          </Card>
-        </Box>
-      )
-    })} */
-    //   </Slider >
-    // </Box >
   )
 }

@@ -16,6 +16,7 @@ interface IProps {
 interface ILocationProps {
   name: string
   restaurants: IProps[]
+  commerce: IProps[]
 }
 
 interface ILocationData {

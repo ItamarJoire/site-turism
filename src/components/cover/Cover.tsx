@@ -2,7 +2,7 @@ import { Paper, Box, Grid, Typography, useMediaQuery } from '@mui/material';
 
 // import { Search } from '../search/Search';
 
-import InstagramIcon from '@mui/icons-material/Instagram';
+// import InstagramIcon from '@mui/icons-material/Instagram';
 
 import Logo from '../../assets/images/logo.png'
 
@@ -59,7 +59,7 @@ export function Cover(props: ICoverProps) {
             Turism
           </Typography>
         </Box>
-        <InstagramIcon />
+        {/* <InstagramIcon /> */}
       </Box>
 
       {
