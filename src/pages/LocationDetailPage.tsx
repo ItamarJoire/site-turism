@@ -12,7 +12,6 @@ import RightArrow from '../assets/images/right-arrow.svg'
 
 import Img from '../assets/images/praia.jpg'
 import { useDatabase } from '../hooks/useDatabase';
-import { useState } from 'react';
 
 const cover = {
   image: `${Img}`
