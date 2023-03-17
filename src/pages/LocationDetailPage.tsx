@@ -3,8 +3,6 @@ import { useParams } from 'react-router-dom';
 
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-// import { useLocation } from "../hooks/useLocation";
-
 import Slider, { CustomArrowProps } from 'react-slick'
 
 import { TableDays } from '../components';
@@ -14,6 +12,7 @@ import RightArrow from '../assets/images/right-arrow.svg'
 
 import Img from '../assets/images/praia.jpg'
 import { useDatabase } from '../hooks/useDatabase';
+import { useState } from 'react';
 
 const cover = {
   image: `${Img}`
@@ -28,9 +27,6 @@ export function LocationDetailPage() {
   function check(value: any) {
     return value.id === (id ? Number.parseInt(id, 10) : null)
   }
-
-  console.log('result', result)
-  console.log('Id: ', id)
 
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }: CustomArrowProps) => (
     <img src={LeftArrow} alt="prevArrow" {...props} />
@@ -93,7 +89,7 @@ export function LocationDetailPage() {
           color='#174661'
           sx={{ maxWidth: '400px' }}
         >
-          {result[0].title}
+          {result && result[0].title}
         </Typography>
         <Divider sx={{ my: 4 }} />
 
@@ -128,13 +124,13 @@ export function LocationDetailPage() {
               component='div'
               lineHeight='24px'
               color='#5E6D77'
+              mt={2}
             >
               {result[0].description}
 
             </Typography>
 
             <TableDays />
-
           </Box>
         </Box>
 
@@ -146,7 +142,7 @@ export function LocationDetailPage() {
             borderRadius: '50%',
             p: 1,
           }}
-          href={'https://api.whatsapp.com/send/?phone=5571988462999&text&type=phone_number&app_absent=0'}
+          href={'https://api.whatsapp.com/send/?phone=5571988999999&text&type=phone_number&app_absent=0'}
           target='_blank'
         >
           <Box >

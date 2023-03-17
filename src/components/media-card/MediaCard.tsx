@@ -97,73 +97,139 @@ export function MediaCard({ title, subtitle }: IProps) {
         </Typography>
       </Box>
 
-      <Slider {...settings}>
-        {list.length === 0 ? (
-          <Skeleton variant="rectangular" width={210} height={118} />
-        ) : (list[0].restaurants.map((item: any) => {
-          return (
-            <Box key={item.id} sx={{ display: 'flex' }}>
-              <Card
-                variant='outlined'
-                sx={{
-                  maxWidth: { xs: '100%', sm: 265 },
-                  mx: 0.6
-                }}
-              >
-                <CardMedia
-                  key={item.id}
-                  image={item.images[0].image}
-                  sx={{ height: 260 }}
-                >
-                  <Paper
+      {title === 'Restaurantes' &&
+        <Slider {...settings}>
+          {list.length === 0 ? (
+            <Skeleton variant="rectangular" width={210} height={118} />
+          ) :
+
+            (list[0].restaurants.map((item: any) => {
+              return (
+                <Box key={item.id} sx={{ display: 'flex' }}>
+                  <Card
+                    variant='outlined'
                     sx={{
-                      position: 'relative',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      alignItems: 'space-around',
-                      height: '100%',
-                      color: 'red',
-                      background: 'linear-gradient(360deg, #000000 -23.59%, rgba(86, 86, 86, 0) 64.78%)'
+                      maxWidth: { xs: '100%', sm: 265 },
+                      mx: 0.6
                     }}
                   >
-                    <CardContent
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'end',
-                        cursor: 'pointer'
-                      }}>
-
-                      <Link
-                        to={`/detalhe-do-local/${item.id}`}
+                    <CardMedia
+                      key={item.id}
+                      image={item.images[0].image}
+                      sx={{ height: 260 }}
+                    >
+                      <Paper
+                        sx={{
+                          position: 'relative',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'space-between',
+                          alignItems: 'space-around',
+                          height: '100%',
+                          color: 'red',
+                          background: 'linear-gradient(360deg, #000000 -23.59%, rgba(86, 86, 86, 0) 64.78%)'
+                        }}
                       >
-                        <OpenInNewIcon sx={{ color: '#fff' }} />
-                      </Link>
-                    </CardContent>
+                        <CardContent
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'end',
+                            cursor: 'pointer'
+                          }}>
 
-                    <CardContent>
-                      <Typography
-                        variant='body1'
-                        component='h2'
-                        fontWeight='500'
-                        color='#fff'
+                          <Link
+                            to={`/detalhe-do-local/${item.id}`}
+                          >
+                            <OpenInNewIcon sx={{ color: '#fff' }} />
+                          </Link>
+                        </CardContent>
+
+                        <CardContent>
+                          <Typography
+                            variant='body1'
+                            component='h2'
+                            fontWeight='500'
+                            color='#fff'
+                          >
+                            {item.title}
+                          </Typography>
+                        </CardContent>
+                      </Paper>
+                    </CardMedia>
+                  </Card>
+                </Box>
+              )
+            }))}
+        </Slider>
+      }
+
+      {title === 'Diversos' &&
+        <Slider {...settings}>
+          {list.length === 0 ? (
+            <Skeleton variant="rectangular" width={210} height={118} />
+          ) :
+
+            (list[0].commerce.map((item: any) => {
+              return (
+                <Box key={item.id} sx={{ display: 'flex' }}>
+                  <Card
+                    variant='outlined'
+                    sx={{
+                      maxWidth: { xs: '100%', sm: 265 },
+                      mx: 0.6
+                    }}
+                  >
+                    <CardMedia
+                      key={item.id}
+                      image={item.images[0].image}
+                      sx={{ height: 260 }}
+                    >
+                      <Paper
+                        sx={{
+                          position: 'relative',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'space-between',
+                          alignItems: 'space-around',
+                          height: '100%',
+                          color: 'red',
+                          background: 'linear-gradient(360deg, #000000 -23.59%, rgba(86, 86, 86, 0) 64.78%)'
+                        }}
                       >
-                        {item.title}
-                      </Typography>
-                    </CardContent>
-                  </Paper>
-                </CardMedia>
-              </Card>
-            </Box>
-          )
+                        <CardContent
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'end',
+                            cursor: 'pointer'
+                          }}>
 
-        }))}
+                          <Link
+                            to={`/detalhe-do-local/${item.id}`}
+                          >
+                            <OpenInNewIcon sx={{ color: '#fff' }} />
+                          </Link>
+                        </CardContent>
 
-      </Slider >
+                        <CardContent>
+                          <Typography
+                            variant='body1'
+                            component='h2'
+                            fontWeight='500'
+                            color='#fff'
+                          >
+                            {item.title}
+                          </Typography>
+                        </CardContent>
+                      </Paper>
+                    </CardMedia>
+                  </Card>
+                </Box>
+              )
+            }))}
+        </Slider>
 
 
+      }
     </Box >
-
-
   )
 }

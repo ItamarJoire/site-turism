@@ -1,11 +1,11 @@
-import { Box, Container, Typography, Link } from '@mui/material';
+import { Box, Typography, Link } from '@mui/material';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="#fff">
+    <Typography variant="body2" color="#fff" textAlign='center'>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Itaparica
+      <Link color="inherit" href="/">
+        2023 Ilha Turism
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -31,12 +31,9 @@ export function Footer() {
           backgroundColor: '#113448'
         }}
       >
-        <Container maxWidth="xl">
-          <Typography color='#fff' variant="body1">
-            My sticky footer can be found here.
-          </Typography>
-          <Copyright />
-        </Container>
+
+        <Copyright />
+
       </Box>
     </Box>
   );

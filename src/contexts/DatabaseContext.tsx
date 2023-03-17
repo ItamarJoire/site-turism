@@ -48,13 +48,6 @@ export function DatabaseContextProvider({ children }: IChildren) {
     loadData()
   }, [])
 
-  // useEffect(() => {
-  //   axios
-  //     .get('http://localhost:3001/locations')
-  //     .then(response => setList(response.data))
-  // }, [])
-
-
   return (
     <DatabaseContext.Provider value={{ list, setList }}>
       {children}
