@@ -15,7 +15,6 @@ export function MainPage(): JSX.Element {
   return (
     <>
       <Cover post={cover} />
-      <MediaCard title='Restaurantes' subtitle='Opções deliciosas esperando por você' />
       <MediaCard title='Diversos' subtitle='Descubra o que os visitantes mais buscam' />
     </>
   )

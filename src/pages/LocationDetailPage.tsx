@@ -21,7 +21,7 @@ export function LocationDetailPage() {
   const { id } = useParams()
   const { list } = useDatabase()
 
-  const result = list[0].restaurants.filter(check)
+  const result = list[0].commerce.filter(check)
 
   function check(value: any) {
     return value.id === (id ? Number.parseInt(id, 10) : null)
